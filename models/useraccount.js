@@ -11,11 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // UserAccount.hasOne(models.User, {foreignKey: "userid"});
+      UserAccount.belongsTo(models.User, {foreignKey: 'userid'})
       // UserAccount.hasMany(models.Transaction, { foreignKey: "userid"});
     }
   };
   UserAccount.init({
-    userid: DataTypes.STRING,
+    userid: DataTypes.INTEGER,
     balance: DataTypes.INTEGER
   }, {
     sequelize,

@@ -12,6 +12,7 @@ app.use((req,res,next)=>{
 app.use(express.urlencoded({ extended: true}));
 app.use('/user',require('./controllers/usercontroller.js'));
 app.use('/invest',require('./controllers/investcontroller.js'));
+app.use('/group',require('./controllers/groupcontroller.js'));
 
 app.get('/', (req,res)=>{
     res.render('main.ejs');
