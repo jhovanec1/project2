@@ -2,6 +2,9 @@
   "name": "project2",
   "version": "1.0.0",
   "description": "For project 2, I will be setting up a Stock Trading Website with multiple aspects of functionality. Users will be able to create, edit and delete their personal accounts. Users will also be able to deposit and withdraw funds.",
+  "engines": {
+    "node": "12.x"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
