@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <title>Profile</title>
 </head>
 <body>
-    <h1>Profile Page</h1>
+    <h1>Welcome, <%=user.name%></h1>
+    <div id="userprofile">
+        <form action = "/user/profile/<%=user.id%>?_method=PUT" method="POST" >
+            Username: <input type="text" name="userName" value="<%=user.userName %>" /><br/>
+            Password: <input type="text" name="password" value="<%=user.password %>"/><br/>
+            Email: <input type="text" name="email" value="<%=user.email %>" /><br/>
+            <input type="submit" name="" value ="Edit">
+        </form>
+        <form action = "/user/profile/<%=user.id%>?_method=DELETE" method="POST">
+        <input type="submit" name="" value="Delete">
+        </form>
+        </div>
+
 </body>
 </html>

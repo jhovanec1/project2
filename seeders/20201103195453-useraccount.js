@@ -6,7 +6,7 @@ module.exports = {
       "UserAccounts",
       [
         {
-          userId: 1,
+          userid: 1,
           balance: 400,
           createdAt: new Date(),
           updatedAt: new Date(),

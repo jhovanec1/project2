@@ -8,13 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
+      userid: {
         type: Sequelize.INTEGER
       },
-      groupId: {
+      groupid: {
         type: Sequelize.INTEGER
       },
-      stockId: {
+      stockid: {
         type: Sequelize.INTEGER
       },
       price: {

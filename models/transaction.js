@@ -10,14 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Transaction.belongsTo(models.UserAccount, {foreignKey: 'userId'});
-      Transaction.belongsTo(models.Groupaccount, {foreignKey: 'groupId'})
+      Transaction.belongsTo(models.UserAccount, {foreignKey: 'userid'});
+      Transaction.belongsTo(models.Groupaccount, {foreignKey: 'groupid'})
     }
   };
   Transaction.init({
-    userId: DataTypes.INTEGER,
-    groupId: DataTypes.INTEGER,
-    stockId: DataTypes.INTEGER,
+    userid: DataTypes.INTEGER,
+    groupid: DataTypes.INTEGER,
+    stockid: DataTypes.INTEGER,
     price: DataTypes.INTEGER
   }, {
     sequelize,

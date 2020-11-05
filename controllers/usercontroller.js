@@ -21,7 +21,7 @@ router.post('/signup',(req,res)=>{
     })
 })
 
-// Post Login
+// Post Login and Get Main Newsfeed Page
 router.post('/login', (req,res)=>{
     Users.findOne({
         where: {
@@ -29,20 +29,40 @@ router.post('/login', (req,res)=>{
             password: req.body.password,
         }
     }).then((user)=>{
-        res.redirect(`/user/profile/${user.id}`)
-        console.log(user)
+        if(user !== null){
+            res.redirect(`/user/newsfeed/${user.id}`);
+            // console.log(user);
+        }else{
+            console.log('NO')
+            return
+        }
     })
 })
+router.get('/newsfeed/:id', (req,res)=>{
+    res.render('mainpage.ejs', {
+        id:req.params.id
+        
+    })
+    console.log(id)
+})
+
+
+// Will need to update routing and delete below
 
 router.get('/profile/:id', (req,res)=>{
-    res.render('profile.ejs')
+    Users.findByPk(req.params.id).then((user)=>{
+        console.log(user)
+        res.render('profile.ejs',{
+            user:user
+        })
+    })
 })
-// // Get profile page
+// Get profile page
 // router.get('/profile/:id', (req,res)=>{
 //     Users.findByPk(req.params.id, {
 //         include: [{ model: Useraccount}],
 //     }).then((users)=>{
-//         UserAccount.findOne().then((account)=>{
+//         UserAccount.findAll().then((account)=>{
 //             res.render('profile.ejs', {
 //                 account:account,
 //                 users:users,
@@ -50,6 +70,29 @@ router.get('/profile/:id', (req,res)=>{
 //         })
 //     })
 // })
+
+// Edit the profile
+router.put('/profile/:id', (req,res)=>{
+    Users.update(req.body, {
+        where: {
+            id: req.params.id
+        },
+        returning: true,
+    }).then((users)=>{
+        res.redirect(`/user/profile/${req.params.id}`)
+    })
+})
+
+// Delete User
+router.delete('/profile/:id', (req,res)=>{
+    Users.destroy({
+        where: {
+            id: req.params.id
+          }
+        }).then(()=>{
+          res.redirect("/")
+        })
+})
 
 
 module.exports = router;

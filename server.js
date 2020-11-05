@@ -10,7 +10,8 @@ app.use((req,res,next)=>{
     next();
 });
 app.use(express.urlencoded({ extended: true}));
-app.use('/user',require('./controllers/usercontroller.js'))
+app.use('/user',require('./controllers/usercontroller.js'));
+app.use('/invest',require('./controllers/investcontroller.js'));
 
 app.get('/', (req,res)=>{
     res.render('main.ejs');

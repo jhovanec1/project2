@@ -12,7 +12,7 @@ module.exports = {
           address: '123 Main st',
           createdAt: new Date(),
           updatedAt: new Date(),
-          groupId: 1,
+          groupid: 1,
           password: '1201',
         }
       ]

@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      User.hasOne(models.UserAccount);
+      // User.hasOne(models.UserAccount);
     }
   };
   User.init({
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     userName: DataTypes.STRING,
     email: DataTypes.STRING,
     address: DataTypes.STRING,
-    groupId: DataTypes.INTEGER,
+    groupid: DataTypes.INTEGER,
     password: DataTypes.STRING,
   }, {
     sequelize,
