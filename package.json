@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "For project 2, I will be setting up a Stock Trading Website with multiple aspects of functionality. Users will be able to create, edit and delete their personal accounts. Users will also be able to deposit and withdraw funds.",
   "engines": {
-    "node": "12.x"
+    "node": "15.0.1"
   },
   "main": "server.js",
   "scripts": {
