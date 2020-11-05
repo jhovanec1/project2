@@ -1,0 +1,2 @@
+
+<li><a href="/group/<%=user.Group.id%>">Group Page</a></li>

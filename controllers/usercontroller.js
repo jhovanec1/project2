@@ -33,7 +33,7 @@ router.post('/login', (req,res)=>{
     }).then((user)=>{
         if(user !== null){
             res.redirect(`/user/newsfeed/${user.id}`);
-            // console.log(user);
+            console.log(user.id);
         }else{
             console.log('NO')
             return
@@ -45,14 +45,16 @@ router.get('/newsfeed/:id', (req,res)=>{
         id:req.params.id
         
     })
-    console.log(id)
+    
 })
 
 
 // Will need to update routing and delete below
 
 router.get('/profile/:id', (req,res)=>{
-    Users.findByPk(req.params.id).then((user)=>{
+    Users.findByPk(req.params.id, {
+        include: [{ model: Useraccount}, {model: Group}],
+    }).then((user)=>{
         console.log(user)
         res.render('profile.ejs',{
             user:user

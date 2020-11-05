@@ -7,6 +7,18 @@
 </head>
 <body>
     <h1>Welcome, <%=user.name%></h1>
+    <%if(!user.UserAccount){%>
+        <h2>Balance: $0</h2>
+        <% }else{%>
+            <h2>Balance: <%=user.UserAccount.balance%></h2>
+        <% } %>
+
+    <%if(!user.Group){%>
+        <h2>Group: </h2>
+        <% }else{%>
+            <h3>Group: <a href= "/group/<%=user.Group.id%>"><%=user.Group.name%></a></h3>
+        <% } %>
+    
     <div id="userprofile">
         <form action = "/user/profile/<%=user.id%>?_method=PUT" method="POST" >
             Username: <input type="text" name="userName" value="<%=user.userName %>" /><br/>
@@ -17,7 +29,18 @@
         <form action = "/user/profile/<%=user.id%>?_method=DELETE" method="POST">
         <input type="submit" name="" value="Delete">
         </form>
-        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/user/newsfeed/<%=user.id%>">Feed</li>
+            <%if(!user.Group){%>
+                <li><a href= "/group">Find a Group</a>
+                <% }else{%>
+                    <li><a href="/group/<%=user.Group.id%>">Group Page</a></li>
+                <% } %>
+            <li><a href="/invest/home">Invest</a></li>
+        </ul>
+    </nav>
 
 </body>
 </html>

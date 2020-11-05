@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groups</title>
+</head>
+<body>
+    <h1>Investment Fund Groups</h1>
+
+    <ul class="group">
+        <% for(let i=0;i<groups.length;i++){%>
+        <li>
+            <a class="groupName" href = "/group/<%=groups[i].id%>"><%= groups[i].name %></a> <br/>
+            
+        <% } %>
+        </li>
+    </ul>
+    
+</body>
+</html>
