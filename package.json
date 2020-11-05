@@ -1,23 +1,21 @@
 {
   "name": "project2",
   "version": "1.0.0",
-  "description": "For project 2, I will be setting up a Stock Trading Website with multiple aspects of functionality. Users will be able to create, edit and delete their personal accounts. Users will also be able to deposit and withdraw funds.",
-  "engines": {
-    "node": "15.0.1"
-  },
+  "description": "",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "ejs": "^3.1.5",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.2",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
-    "pg": "^8.4.2",
+    "pg": "^8.4.0",
     "sequelize": "^6.3.5",
     "sequelize-cli": "^6.2.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
