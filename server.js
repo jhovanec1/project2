@@ -41,6 +41,6 @@ app.get('/', (req,res)=>{
 })
 var port = process.env.PORT || 3000;
 
-app.listen(process.env.PORT, ()=>{
+app.listen(port, ()=>{
     console.log('I am listening')
 })
