@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ='stylesheet' href="/css/profile.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <title>Group: <%=group.name%></title>
 </head>
 <body>
     <h1><%=group.name%></h1>
+    <nav class= "topnav">
+        <a class= 'nav' href = "/group">VIEW GROUPS</a>
+        <a class= 'nav' href = "/auth/signup">CREATE NEW USER</a>
+        <a class='nav' href = "/auth/login">LOGIN</a>
+    </nav>
     <h2>Balance: $<%=group.balance%></h2>
     
-    <p2>Group Chat:</p2>
+    <h3>Group Chat:</h3>
 </body>
 </html>

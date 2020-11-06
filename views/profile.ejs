@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ='stylesheet' href="/css/profile.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <title>Profile</title>
 </head>
 <body>
-    <h1>Welcome, <%=user.name%></h1>
+    <h1>Welcome,<br/> <%=user.name%></h1>
+    <div class="funding">
     <%if(!user.UserAccount){%>
         <h2>Balance: $0</h2>
         <% }else{%>
             <h2>Balance: $<%=user.UserAccount.balance%></h2>
         <% } %>
-
+        <form action="/user/profile/<%=user.id%>/funds%>?_method=PUT" method="POST" >
+            DEPOSIT: <input type="text" name="balance" value=""/>
+            <input type="submit" name="" value="DEPOSIT">
+        </form>
+    </div>
     <%if(!user.Group){%>
         <h2>Group: </h2>
         <% }else{%>
             <h3>Group: <a href= "/group/<%=user.Group.id%>"><%=user.Group.name%></a></h3>
         <% } %>
-    
+        <form action="/user/profile/<%=user.id%>?_method=PUT" method=POST >
+        
     <div id="userprofile">
         <form action = "/user/profile/<%=user.id%>?_method=PUT" method="POST" >
+            
             Username: <input type="text" name="userName" value="<%=user.userName %>" /><br/>
             Password: <input type="text" name="password" value="<%=user.password %>"/><br/>
             Email: <input type="text" name="email" value="<%=user.email %>" /><br/>
@@ -30,17 +39,17 @@
         <input type="submit" name="" value="Delete">
         </form>
     </div>
-    <nav>
-        <ul>
-            <li><a href="/user/newsfeed/<%=user.id%>">Feed</li>
+    <div class="topnav">
+        
+            <a href="/user/newsfeed/<%=user.id%>">Feed</a>
             <%if(!user.Group){%>
-                <li><a href= "/group">Find a Group</a>
+                <a href= "/group">Find a Group</a>
                 <% }else{%>
-                    <li><a href="/group/<%=user.Group.id%>">Group Page</a></li>
+                    <a href="/group/<%=user.Group.id%>">Group Page</a>
                 <% } %>
-            <li><a href="/invest/home">Invest</a></li>
-        </ul>
-    </nav>
+            <a href="/invest/home">Invest</a>
+       
+    </div>
 
 </body>
 </html>

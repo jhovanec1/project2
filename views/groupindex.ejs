@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ='stylesheet' href="/css/profile.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <title>Groups</title>
 </head>
 <body>
     <h1>Investment Fund Groups</h1>
-    <nav>
+    <nav class= "topnav">
         <a class= 'nav' href = "/group/create/new">CREATE NEW GROUP</a>
-        <a class= 'nav' href = "/user/signup">CREATE NEW USER</a>
-        <a class='nav' href = "/user/login">LOGIN</a>
+        <a class= 'nav' href = "/auth/signup">CREATE NEW USER</a>
+        <a class='nav' href = "/auth/login">LOGIN</a>
     </nav>
-    <ul class="group">
+    <div class="group">
         <% for(let i=0;i<groups.length;i++){%>
-        <li>
+        
             <a class="groupName" href = "/group/<%=groups[i].id%>"><%= groups[i].name %></a> <br/>
             
         <% } %>
-        </li>
-    </ul>
+        
+    </div>
     
 </body>
 </html>

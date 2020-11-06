@@ -1,0 +1,61 @@
+body{
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 25% 20% 10% 20% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+h1{
+    display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    color: #f2f2f2;
+    background-color: #333;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 35px;
+}
+.topnav {
+    display: grid;
+    grid-row: 1;
+    grid-column: 2/6;
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+.topnav a.active {
+background-color: #4CAF50;
+color: white;
+}
+.funding{
+    display: grid;
+    grid-row: 2;
+    grid-column: 4/6;
+}
+.userprofile{
+    display: grid;
+    grid-row: 2;
+    grid-column: 2/3;
+}
+li{
+    text-decoration: none;
+}
+.group{
+    text-decoration: none;
+}

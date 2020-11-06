@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ='stylesheet' href="/css/newsfeed.css" />
+    <link rel ='stylesheet' href="/css/profile.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    
     <title>NewsFeed</title>
 </head>
 <body>
     <h1>What are you seeing today?</h1>
-    <nav>
-        <ul>
-            <p1><%=id%></p1>
-            <li><a href="/user/profile/<%=id%>">Profile</a></li>
-            <li><a href="/group">Group Page</a></li>
-            <li><a href="/invest/home">Invest</a></li>
-        </ul>
-
+    <nav class="topnav">
+        
+            <a href="/user/profile/<%=id%>">Profile</a>
+            <a href="/group">Group Page</a>
+            <a href="/invest/home">Invest</a>
     </nav>
 </body>
 </html>

@@ -22,9 +22,12 @@ router.get('/profile/:id', (req,res)=>{
     Users.findByPk(req.params.id, {
         include: [{ model: Useraccount}, {model: Group}],
     }).then((user)=>{
-        console.log(user)
+        // console.log(user)
+        Group.findAll().then((allgroups)=>{
         res.render('profile.ejs',{
-            user:user
+            user:user,
+            Group:allgroups
+        })
         })
     })
 })
@@ -41,6 +44,13 @@ router.put('/profile/:id', (req,res)=>{
         res.redirect(`/user/profile/${req.params.id}`)
     })
 })
+router.put('/profile/:id/funds', (req,res)=>{
+    console.log(req.params.id);
+    console.log(req.body) 
+        Useraccount.create({userid: req.body, balance: req.params.id,}
+          )
+})
+
 
 // Delete User
 router.delete('/profile/:id', (req,res)=>{
