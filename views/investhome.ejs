@@ -7,5 +7,24 @@
 </head>
 <body>
     <h1>Market Today</h1>
+    
+    <div class='new'>
+        <form action="/invest/add/new" method="POST">
+        Name: <input type="text" name="name" /><br/>
+        Price: <input type="text" name="price" /><br/>
+        Quantity: <input type="text" name="quantity"/>
+        <input type="submit" name="" value="Create Listing"/>
+        </form>
+    </div>
+    
+    <ul class="listing">
+        <% for(let i=0;i<stock.length;i++){%>
+        <li>
+            <a class="name" href = "/invest/home/<%=stock[i].id%>"><%= stock[i].name %></a><br/>
+            
+        <% } %>
+        </li>
+    </ul>
+
 </body>
 </html>

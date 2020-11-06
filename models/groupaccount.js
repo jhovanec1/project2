@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Groupaccount.belongsTo(models.Group, {foreignKey: 'groupid'});
+      Groupaccount.hasMany(models.Transaction, {foreignKey: 'groupid'});
     }
   };
   Groupaccount.init({

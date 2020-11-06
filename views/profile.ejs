@@ -10,7 +10,7 @@
     <%if(!user.UserAccount){%>
         <h2>Balance: $0</h2>
         <% }else{%>
-            <h2>Balance: <%=user.UserAccount.balance%></h2>
+            <h2>Balance: $<%=user.UserAccount.balance%></h2>
         <% } %>
 
     <%if(!user.Group){%>
