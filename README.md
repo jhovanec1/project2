@@ -11,7 +11,9 @@ Once this basic skeleton was created I could add complexity and bring in css sty
 
 ## Future Additions
 
-This submitted app is about 10% of the original functionality I dreamed up. I would continue to add routes and ways users/groups can add funds, make trades or investments and interact on the feed/chat pages. Additionally, I would like to pull a stock ticker API into the investments section to keep everything more up to date and real-world.
+This submitted app is about 10% of the original functionality I planned and nowhere near what I pictured. Many little hurdles with my first associations and heroku deployment consumed a lot of my time. 
+
+I would continue to add routes and ways users/groups can add funds, make trades or investments and interact on the feed/chat pages. Additionally, I would like to pull a stock ticker API into the investments section to keep everything more up to date and real-world.
 
 Lastly, once we delve into the python section, it would be cool to add data analysis tools.
 
